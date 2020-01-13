@@ -1,0 +1,54 @@
+<header class="naturescot-header {{ params.classes if params.classes }}" role="banner" data-module="naturescot-header"
+        {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+  <div class="naturescot-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="naturescot-header__logo">
+      <a href="{{ params.homepageUrl | default('/') }}" class="naturescot-header__link naturescot-header__link--homepage">
+        <span class="naturescot-header__logotype">
+<svg width="36" height="22" version="1.1" viewBox="0 0 135.47 84.667" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(0 -212.33)">
+<g transform="matrix(.93895 0 0 .92042 4.2333 43.881)">
+<path d="m4.6279 269.26c10.859-22.511 24.011-37.477 56.258-39.186 4.2633 7.4748 6.9856 25.499 31.745 25.302-31.206 19.319-65.425 1.6687-88.003 13.885z" fill="currentColor"/>
+<path d="m64.052 229.79c21.191-3.4256 47.283-2.2608 71.206-41.711-4.5498 60.822-51.947 77.618-71.206 41.711z" fill="currentColor"/>
+<path d="m3.8583e-5 272.13c0.23943-17.776 8.4125-49.401 21.286-62.161 10.29-9.602 34.072 2.4783 36.302 12.613-38.238 1.8119-51.513 35.178-57.588 49.547z" fill="currentColor"/>
+<path d="m33.029 198.82c32.097-22.798 63.092-0.88604 98.926-12.928-15.54 24.552-45.739 36.278-71.061 36.367-4.3713-11.103-8.7314-20.875-27.865-23.44z" fill="currentColor"/>
+</g>
+</g>
+</svg>
+          <span class="naturescot-header__logotype-text">
+            NatureScot
+          </span>
+        </span>
+        {% if (params.productName) %}
+        <span class="naturescot-header__product-name">
+          {{ params.productName }}
+        </span>
+        {% endif %}
+      </a>
+    </div>
+    {% if params.serviceName or params.navigation  %}
+    <div class="naturescot-header__content">
+    {% if params.serviceName %}
+    <a href="{{ params.serviceUrl }}" class="naturescot-header__link naturescot-header__link--service-name">
+      {{ params.serviceName }}
+    </a>
+    {% endif %}
+    {% if params.navigation %}
+    <button type="button" class="naturescot-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+    <nav>
+      <ul id="navigation" class="naturescot-header__navigation {{ params.navigationClasses if params.navigationClasses }}" aria-label="Top Level Navigation">
+        {% for item in params.navigation %}
+          {% if item.href and item.text %}
+            <li class="naturescot-header__navigation-item{{ ' naturescot-header__navigation-item--active' if item.active }}">
+              <a class="naturescot-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                {{ item.text }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</header>
