@@ -6,6 +6,7 @@
         {% for nav in params.navigation %}
           <div class="naturescot-footer__section">
             <h2 class="naturescot-footer__heading govuk-heading-m">{{ nav.title }}</h2>
+            <p>These links open in new tabs</p>
             {% if nav.items %}
               {% set listClasses %}
                 {% if nav.columns %}
@@ -16,8 +17,8 @@
                 {% for item in nav.items %}
                   {% if item.href and item.text %}
                     <li class="naturescot-footer__list-item">
-                      <a class="naturescot-footer__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-                        {{ item.text }}
+                      <a class="naturescot-footer__link" rel="noreferrer noopener" target="_blank" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                        {{ item.text }}&nbsp;<span class="govuk-visually-hidden">(opens in new tab)</span>
                       </a>
                     </li>
                   {% endif %}
@@ -33,12 +34,13 @@
       <div class="naturescot-footer__meta-item naturescot-footer__meta-item--grow">
         {% if params.meta %}
           <h2 class="govuk-visually-hidden">{{ params.meta.visuallyHiddenTitle | default("Support links") }}</h2>
+          <p>These links open in new tabs</p>
           {% if params.meta.items %}
             <ul class="naturescot-footer__inline-list">
               {% for item in params.meta.items %}
                 <li class="naturescot-footer__inline-list-item">
-                  <a class="naturescot-footer__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-                    {{ item.text }}
+                  <a class="naturescot-footer__link" rel="noreferrer noopener" target="_blank" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                    {{ item.text }}&nbsp;<span class="govuk-visually-hidden">(opens in new tab)</span>
                   </a>
                 </li>
               {% endfor %}
@@ -71,14 +73,16 @@
           All content is available under the
           <a
             class="naturescot-footer__link"
+            target="_blank"
             href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
-            rel="license"
+            rel="license noreferrer noopener"
           >Open Government Licence v3.0</a>, except where otherwise stated
         </span>
       </div>
       <div class="naturescot-footer__meta-item">
         <a
           class="naturescot-footer__link naturescot-footer__copyright-logo"
+          rel="noreferrer noopener" target="_blank"
           href="https://www.nature.scot/copyright"
         >© NatureScot</a>
       </div>
