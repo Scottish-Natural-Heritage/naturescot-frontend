@@ -45,6 +45,28 @@ $naturescot-logo: "naturescot-logo.png" !default;
     background: $naturescot-footer-background;
   }
 
+  .naturescot-footer svg  {
+    .cls-1 {
+      fill:none;
+    }
+
+    .cls-2 {
+      fill:url(#linear-gradient);
+    }
+
+    .cls-3 {
+      fill:#85be00;
+    }
+
+    .cls-4 {
+      fill:#5e91bf;
+    }
+
+    .cls-5 {
+      fill:#5e8bbf;
+    }
+  }
+
   .naturescot-footer__link {
     @if ($govuk-use-legacy-palette) {
       &:link,
