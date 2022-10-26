@@ -30,7 +30,7 @@ $naturescot-logo: "naturescot-logo.png" !default;
 
   // Based on the govuk-crest-2x.png image dimensions.
   $naturescot-footer-crest-image-width-2x: 350px;
-  $naturescot-footer-crest-image-height-2x: 230px;
+  $naturescot-footer-crest-image-height-2x: 294px;
   // Half the 2x image so that it fits the regular 1x size.
   $naturescot-footer-crest-image-width: ($naturescot-footer-crest-image-width-2x / 2);
   $naturescot-footer-crest-image-height: ($naturescot-footer-crest-image-height-2x / 2);
@@ -43,28 +43,6 @@ $naturescot-logo: "naturescot-logo.png" !default;
     border-top: 1px solid $naturescot-footer-border-top;
     color: $naturescot-footer-text;
     background: $naturescot-footer-background;
-  }
-
-  .naturescot-footer svg  {
-    .cls-1 {
-      fill:none;
-    }
-
-    .cls-2 {
-      fill:url(#linear-gradient);
-    }
-
-    .cls-3 {
-      fill:#85be00;
-    }
-
-    .cls-4 {
-      fill:#5e91bf;
-    }
-
-    .cls-5 {
-      fill:#5e8bbf;
-    }
   }
 
   .naturescot-footer__link {
