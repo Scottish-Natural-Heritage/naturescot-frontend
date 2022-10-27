@@ -1,8 +1,8 @@
-@import "govuk-frontend/govuk/settings/all";
-@import "govuk-frontend/govuk/tools/all";
-@import "govuk-frontend/govuk/helpers/all";
+@import "node_modules/govuk-frontend/govuk/settings/all";
+@import "node_modules/govuk-frontend/govuk/tools/all";
+@import "node_modules/govuk-frontend/govuk/helpers/all";
 
-@import "govuk-frontend/govuk/helpers/typography";
+@import "node_modules/govuk-frontend/govuk/helpers/typography";
 
 @include govuk-exports("naturescot/component/header") {
 
@@ -26,15 +26,15 @@
 
   .naturescot-header svg  {
     .cls-1 {
-      fill: none;
+      fill:#fff;
     }
 
     .cls-2 {
-      fill: currentColor;
+      fill:none;
     }
 
     .cls-3 {
-      fill:url("#naturescot-header-gradient");
+      fill:url("#gradient_white");
     }
   }
 
