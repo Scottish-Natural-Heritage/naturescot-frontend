@@ -28,12 +28,13 @@ $naturescot-logo: "naturescot-logo.png" !default;
     $naturescot-footer-link-hover: #171819;
   }
 
-  // Based on the govuk-crest-2x.png image dimensions.
-  $naturescot-footer-crest-image-width-2x: 350px;
-  $naturescot-footer-crest-image-height-2x: 230px;
-  // Half the 2x image so that it fits the regular 1x size.
-  $naturescot-footer-crest-image-width: ($naturescot-footer-crest-image-width-2x / 2);
-  $naturescot-footer-crest-image-height: ($naturescot-footer-crest-image-height-2x / 2);
+  // Was originally based on the govuk-crest-2x.png image dimensions, but the new
+  // image is larger.
+  $naturescot-footer-crest-image-width-original: 512px;
+  $naturescot-footer-crest-image-height-original: 430px;
+  // Divide by 3 (rather than halve) the new image so that it fits the regular 1x size but maintains aspect ratio.
+  $naturescot-footer-crest-image-width: ($naturescot-footer-crest-image-width-original / 3);
+  $naturescot-footer-crest-image-height: ($naturescot-footer-crest-image-height-original / 3);
 
   .naturescot-footer {
     @include govuk-font($size: 16);
