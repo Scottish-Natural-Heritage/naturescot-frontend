@@ -24,20 +24,6 @@
 
   }
 
-  .naturescot-header svg  {
-    .cls-1 {
-      fill: none;
-    }
-
-    .cls-2 {
-      fill: currentColor;
-    }
-
-    .cls-3 {
-      fill:url("#naturescot-header-gradient");
-    }
-  }
-
   .naturescot-header__container--full-width {
     padding: 0 govuk-spacing(3);
     border-color: $naturescot-header-border-color;
@@ -327,6 +313,24 @@
       line-height: 30px;
     }
     // End adjustments
+  }
+
+  // Styles for the .svg used in the header.
+
+  .whitename {
+    fill: #FFFFFF;
+  }
+
+  .cls-3 {
+    fill: #FFFFFF;
+  }
+
+  .cls-4 {
+    fill: #FFFFFF;
+  }
+
+  .cls-5 {
+    fill: url(#linear-gradient);
   }
 
 }

@@ -1,6 +1,6 @@
 {
   "name": "naturescot-frontend",
-  "version": "3.0.0",
+  "version": "3.1.3",
   "description": "NatureScot's extensions to GDS' govuk-frontend",
   "author": "Mike Coats <mike.coats@nature.scot>",
   "repository": "github:Scottish-Natural-Heritage/naturescot-frontend",
