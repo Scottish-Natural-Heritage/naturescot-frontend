@@ -1,8 +1,8 @@
-@import "govuk-frontend/dist/govuk/settings/all";
-@import "govuk-frontend/dist/govuk/tools/all";
-@import "govuk-frontend/dist/govuk/helpers/all";
+@import "govuk-frontend/govuk/settings/all";
+@import "govuk-frontend/govuk/tools/all";
+@import "govuk-frontend/govuk/helpers/all";
 
-@import "govuk-frontend/dist/govuk/helpers/typography";
+@import "govuk-frontend/govuk/helpers/typography";
 
 $naturescot-logo: "naturescot-logo.png" !default;
 
