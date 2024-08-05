@@ -1,13 +1,12 @@
-@import "govuk-frontend/govuk/settings/all";
-@import "govuk-frontend/govuk/tools/all";
-@import "govuk-frontend/govuk/helpers/all";
+@import "govuk-frontend/dist/govuk/settings/all";
+@import "govuk-frontend/dist/govuk/tools/all";
+@import "govuk-frontend/dist/govuk/helpers/all";
 
-@import "govuk-frontend/govuk/helpers/typography";
+@import "govuk-frontend/dist/govuk/helpers/typography";
 
 $naturescot-logo: "naturescot-logo.png" !default;
 
 @include govuk-exports("naturescot/component/footer") {
-
   $naturescot-footer-background: $govuk-canvas-background-colour;
   $naturescot-footer-border: $govuk-border-colour;
   // This variable can be removed entirely once the legacy palette goes away,
@@ -108,16 +107,16 @@ $naturescot-logo: "naturescot-logo.png" !default;
     margin-right: -$govuk-gutter-half;
     margin-left: -$govuk-gutter-half;
     -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; // Support: Flexbox
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; // Support: Flexbox
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-            align-items: flex-end; // Support: Flexbox
+    -ms-flex-align: end;
+    align-items: flex-end; // Support: Flexbox
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; // Support: Flexbox
+    -ms-flex-pack: center;
+    justify-content: center; // Support: Flexbox
   }
 
   .naturescot-footer__meta-item {
@@ -129,19 +128,19 @@ $naturescot-logo: "naturescot-logo.png" !default;
   .naturescot-footer__meta-item--grow {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1; // Support: Flexbox
-    @include mq ($until: tablet) {
+    -ms-flex: 1;
+    flex: 1; // Support: Flexbox
+    @include mq($until: tablet) {
       -webkit-flex-basis: 320px;
-          -ms-flex-preferred-size: 320px;
-              flex-basis: 320px; // Support: Flexbox
+      -ms-flex-preferred-size: 320px;
+      flex-basis: 320px; // Support: Flexbox
     }
   }
 
   .naturescot-footer__licence-logo {
     display: inline-block;
     margin-right: govuk-spacing(2);
-    @include mq ($until: desktop) {
+    @include mq($until: desktop) {
       margin-bottom: govuk-spacing(3);
     }
     vertical-align: top;
@@ -183,7 +182,7 @@ $naturescot-logo: "naturescot-logo.png" !default;
   .naturescot-footer__heading {
     @include govuk-responsive-margin(7, "bottom");
     padding-bottom: govuk-spacing(4);
-    @include mq ($until: tablet) {
+    @include mq($until: tablet) {
       padding-bottom: govuk-spacing(2);
     }
     border-bottom: 1px solid $naturescot-footer-border;
@@ -197,8 +196,8 @@ $naturescot-logo: "naturescot-logo.png" !default;
     margin-right: -$govuk-gutter-half;
     margin-left: -$govuk-gutter-half;
     -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; // Support: Flexbox
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; // Support: Flexbox
   }
 
   .naturescot-footer__section {
@@ -210,29 +209,29 @@ $naturescot-logo: "naturescot-logo.png" !default;
     // Ensure columns take up equal width (typically one-half:one-half)
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1; // Support: Flexbox
+    -ms-flex-positive: 1;
+    flex-grow: 1; // Support: Flexbox
     -webkit-flex-shrink: 1;
-        -ms-flex-negative: 1;
-            flex-shrink: 1; // Support: Flexbox
-    @include mq ($until: desktop) {
+    -ms-flex-negative: 1;
+    flex-shrink: 1; // Support: Flexbox
+    @include mq($until: desktop) {
       // Make sure columns do not drop below 200px in width
       // Will typically result in wrapping, and end up in a single column on smaller screens.
       -webkit-flex-basis: 200px;
-          -ms-flex-preferred-size: 200px;
-              flex-basis: 200px; // Support: Flexbox
+      -ms-flex-preferred-size: 200px;
+      flex-basis: 200px; // Support: Flexbox
     }
   }
 
   // If there are only two sections, set the layout to be two-third:one-third on desktop
-  @include mq ($from: desktop) {
+  @include mq($from: desktop) {
     // We match the first section with `:first-child`.
     // To ensure the section is one of two, we can count backwards using `:nth-last-child(2)`.
     .naturescot-footer__section:first-child:nth-last-child(2) {
       -webkit-box-flex: 2;
       -webkit-flex-grow: 2;
-          -ms-flex-positive: 2;
-              flex-grow: 2; // Support: Flexbox
+      -ms-flex-positive: 2;
+      flex-grow: 2; // Support: Flexbox
     }
   }
 
@@ -241,21 +240,21 @@ $naturescot-logo: "naturescot-logo.png" !default;
     padding: 0;
     list-style: none;
     -webkit-column-gap: $govuk-gutter;
-       -moz-column-gap: $govuk-gutter;
-            column-gap: $govuk-gutter; // Support: Columns
+    -moz-column-gap: $govuk-gutter;
+    column-gap: $govuk-gutter; // Support: Columns
   }
 
-  @include mq ($from: desktop) {
+  @include mq($from: desktop) {
     .naturescot-footer__list--columns-2 {
       -webkit-column-count: 2;
-         -moz-column-count: 2;
-              column-count: 2; // Support: Columns
+      -moz-column-count: 2;
+      column-count: 2; // Support: Columns
     }
 
     .naturescot-footer__list--columns-3 {
       -webkit-column-count: 3;
-         -moz-column-count: 3;
-              column-count: 3; // Support: Columns
+      -moz-column-count: 3;
+      column-count: 3; // Support: Columns
     }
   }
 

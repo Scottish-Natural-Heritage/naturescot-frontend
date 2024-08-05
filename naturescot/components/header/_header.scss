@@ -1,11 +1,10 @@
-@import "govuk-frontend/govuk/settings/all";
-@import "govuk-frontend/govuk/tools/all";
-@import "govuk-frontend/govuk/helpers/all";
+@import "govuk-frontend/dist/govuk/settings/all";
+@import "govuk-frontend/dist/govuk/tools/all";
+@import "govuk-frontend/dist/govuk/helpers/all";
 
-@import "govuk-frontend/govuk/helpers/typography";
+@import "govuk-frontend/dist/govuk/helpers/typography";
 
 @include govuk-exports("naturescot/component/header") {
-
   $naturescot-header-background: #5e8bbf;
   $naturescot-header-border-color: #85be00;
   $naturescot-header-border-width: govuk-spacing(2);
@@ -21,7 +20,6 @@
     border-bottom: govuk-spacing(2) solid govuk-colour("white");
     color: $naturescot-header-text;
     background: $naturescot-header-background;
-
   }
 
   .naturescot-header__container--full-width {
@@ -138,7 +136,7 @@
     @include govuk-responsive-margin(2, "bottom");
     padding-right: govuk-spacing(8);
 
-    @include mq ($from: desktop) {
+    @include mq($from: desktop) {
       width: 33.33%;
       padding-right: $govuk-gutter-half;
       float: left;
@@ -147,7 +145,7 @@
   }
 
   .naturescot-header__content {
-    @include mq ($from: desktop) {
+    @include mq($from: desktop) {
       width: 66.66%;
       padding-left: $govuk-gutter-half;
       float: left;
@@ -180,7 +178,7 @@
       margin-left: govuk-spacing(1);
     }
 
-    @include mq ($from: tablet) {
+    @include mq($from: tablet) {
       top: govuk-spacing(3);
     }
   }
@@ -202,14 +200,14 @@
   .js-enabled {
     .naturescot-header__menu-button {
       display: block;
-      @include mq ($from: desktop) {
+      @include mq($from: desktop) {
         display: none;
       }
     }
 
     .naturescot-header__navigation {
       display: none;
-      @include mq ($from: desktop) {
+      @include mq($from: desktop) {
         display: block;
       }
     }
@@ -219,9 +217,8 @@
     }
   }
 
-
   .naturescot-header__navigation--end {
-    @include mq ($from: desktop) {
+    @include mq($from: desktop) {
       margin: 0;
       padding: govuk-spacing(1) 0;
       text-align: right;
@@ -236,7 +233,7 @@
     padding: govuk-spacing(2) 0;
     border-bottom: 1px solid $naturescot-header-nav-item-border-color;
 
-    @include mq ($from: desktop) {
+    @include mq($from: desktop) {
       display: inline-block;
       margin-right: govuk-spacing(3);
       padding: govuk-spacing(1) 0;
@@ -318,19 +315,18 @@
   // Styles for the .svg used in the header.
 
   .whitename {
-    fill: #FFFFFF;
+    fill: #ffffff;
   }
 
   .cls-3 {
-    fill: #FFFFFF;
+    fill: #ffffff;
   }
 
   .cls-4 {
-    fill: #FFFFFF;
+    fill: #ffffff;
   }
 
   .cls-5 {
     fill: url(#linear-gradient);
   }
-
 }
