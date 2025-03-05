@@ -1,13 +1,13 @@
 {
   "name": "naturescot-frontend",
-  "version": "4.5.3",
+  "version": "5.9.0",
   "description": "NatureScot's extensions to GDS' govuk-frontend",
   "author": "Mike Coats <mike.coats@nature.scot>",
   "repository": "github:Scottish-Natural-Heritage/naturescot-frontend",
   "license": "(MIT OR OGL-UK-3.0 OR Apache-2.0)",
   "peerDependencies": {
-    "govuk-frontend": "^4.5.0",
-    "sass": "^1.35.2"
+    "govuk-frontend": "^5.9.0",
+    "sass": "^1.85.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

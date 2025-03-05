@@ -1,8 +1,8 @@
-@import "govuk-frontend/govuk/settings/all";
-@import "govuk-frontend/govuk/tools/all";
-@import "govuk-frontend/govuk/helpers/all";
+@import "govuk-frontend/dist/govuk/settings/index";
+@import "govuk-frontend/dist/govuk/tools/index";
+@import "govuk-frontend/dist/govuk/helpers/index";
 
-@import "govuk-frontend/govuk/helpers/typography";
+@import "govuk-frontend/dist/govuk/helpers/typography";
 
 $naturescot-logo: "naturescot-logo.png" !default;
 
@@ -15,17 +15,6 @@ $naturescot-logo: "naturescot-logo.png" !default;
   $naturescot-footer-text: $govuk-text-colour;
   $naturescot-footer-link: $naturescot-footer-text;
   $naturescot-footer-link-hover: false;
-
-  @if ($govuk-use-legacy-palette) {
-    // sass-lint:disable no-color-literals
-    $naturescot-footer-border-top: #a1acb2;
-    $naturescot-footer-border: govuk-colour("grey-2");
-    $naturescot-footer-text: #454a4c;
-    $naturescot-footer-link: $naturescot-footer-text;
-
-    // Only used with the legacy palette
-    $naturescot-footer-link-hover: #171819;
-  }
 
   // Was originally based on the govuk-crest-2x.png image dimensions, but the new
   // image is larger.
@@ -46,49 +35,30 @@ $naturescot-logo: "naturescot-logo.png" !default;
   }
 
   .naturescot-footer__link {
-    @if ($govuk-use-legacy-palette) {
-      &:link,
-      &:visited {
-        color: $naturescot-footer-link;
-      }
-
-      &:hover,
-      &:active {
-        color: $naturescot-footer-link-hover;
-      }
-    } @else {
-      &:link,
-      &:visited,
-      &:hover,
-      &:active {
-        color: $naturescot-footer-link;
-      }
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $naturescot-footer-link;
     }
+    
 
     &:focus {
       @include govuk-focused-text;
     }
 
-    // alphagov/govuk_template includes a specific a:link:focus selector
-    // designed to make unvisited links a slightly darker blue when focussed, so
-    // we need to override the text colour for that combination of selectors.
-    @include govuk-compatibility(govuk_template) {
-      &:link:focus {
-        @include govuk-text-colour;
-      }
+    &:link:focus {
+      @include govuk-text-colour;
     }
   }
 
-  // Internet Explorer 8 does not support `:not()` selectors, so don't conditionally show underlines.
-  @include govuk-not-ie8 {
-    .naturescot-footer__inline-list .naturescot-footer__link,
-    .naturescot-footer__list .naturescot-footer__link {
-      text-decoration: none;
+  .naturescot-footer__inline-list .naturescot-footer__link,
+  .naturescot-footer__list .naturescot-footer__link {
+    text-decoration: none;
 
-      &:hover:not(:focus),
-      &:active:not(:focus) {
-        text-decoration: underline;
-      }
+    &:hover:not(:focus),
+    &:active:not(:focus) {
+      text-decoration: underline;
     }
   }
 
