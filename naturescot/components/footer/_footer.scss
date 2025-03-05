@@ -47,11 +47,19 @@ $naturescot-logo: "naturescot-logo.png" !default;
       @include govuk-focused-text;
     }
 
-
     &:link:focus {
       @include govuk-text-colour;
     }
-    
+  }
+
+  .naturescot-footer__inline-list .naturescot-footer__link,
+  .naturescot-footer__list .naturescot-footer__link {
+    text-decoration: none;
+
+    &:hover:not(:focus),
+    &:active:not(:focus) {
+      text-decoration: underline;
+    }
   }
 
   .naturescot-footer__section-break {
