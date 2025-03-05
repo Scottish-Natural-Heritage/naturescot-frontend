@@ -1,8 +1,8 @@
-@import "govuk-frontend/govuk/settings/all";
-@import "govuk-frontend/govuk/tools/all";
-@import "govuk-frontend/govuk/helpers/all";
+@import "govuk-frontend/dist/govuk/settings/index";
+@import "govuk-frontend/dist/govuk/tools/index";
+@import "govuk-frontend/dist/govuk/helpers/index";
 
-@import "govuk-frontend/govuk/helpers/typography";
+@import "govuk-frontend/dist/govuk/helpers/typography";
 
 @include govuk-exports("naturescot/component/header") {
   $naturescot-header-background: #5e8bbf;
@@ -81,14 +81,10 @@
       @include govuk-focused-text;
     }
 
-    // alphagov/govuk_template includes a specific a:link:focus selector
-    // designed to make unvisited links a slightly darker blue when focussed, so
-    // we need to override the text colour for that combination of selectors.
-    @include govuk-compatibility(govuk_template) {
-      &:link:focus {
-        @include govuk-text-colour;
-      }
+    &:link:focus {
+      @include govuk-text-colour;
     }
+    
   }
 
   .naturescot-header__link--homepage {
@@ -289,27 +285,6 @@
         display: none;
       }
     }
-  }
-
-  @if $govuk-use-legacy-font {
-    // Begin adjustments for font baseline offset
-    // These should be removed when the font is updated with the correct baseline
-    .naturescot-header__logotype-crown,
-    .naturescot-header__logotype-crown-fallback-image {
-      position: relative;
-      top: -4px;
-      vertical-align: middle;
-    }
-
-    .naturescot-header {
-      $offset: 3px;
-      padding-top: $offset;
-    }
-
-    .naturescot-header__link--homepage {
-      line-height: 30px;
-    }
-    // End adjustments
   }
 
   // Styles for the .svg used in the header.
