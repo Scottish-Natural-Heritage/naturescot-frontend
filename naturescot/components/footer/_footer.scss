@@ -14,7 +14,6 @@ $naturescot-logo: "naturescot-logo.png" !default;
   $naturescot-footer-border-top: $govuk-border-colour;
   $naturescot-footer-text: $govuk-text-colour;
   $naturescot-footer-link: $naturescot-footer-text;
-  $naturescot-footer-link-hover: false;
 
   // Was originally based on the govuk-crest-2x.png image dimensions, but the new
   // image is larger.
@@ -41,7 +40,10 @@ $naturescot-logo: "naturescot-logo.png" !default;
     &:active {
       color: $naturescot-footer-link;
     }
-    
+
+    &:hover {
+      @include govuk-link-hover-decoration;
+    }
 
     &:focus {
       @include govuk-focused-text;
@@ -49,16 +51,6 @@ $naturescot-logo: "naturescot-logo.png" !default;
 
     &:link:focus {
       @include govuk-text-colour;
-    }
-  }
-
-  .naturescot-footer__inline-list .naturescot-footer__link,
-  .naturescot-footer__list .naturescot-footer__link {
-    text-decoration: none;
-
-    &:hover:not(:focus),
-    &:active:not(:focus) {
-      text-decoration: underline;
     }
   }
 
