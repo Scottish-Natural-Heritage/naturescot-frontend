@@ -1,6 +1,4 @@
-@import "govuk-frontend/dist/govuk/settings/index";
-@import "govuk-frontend/dist/govuk/tools/index";
-@import "govuk-frontend/dist/govuk/helpers/index";
+@use "govuk-frontend/dist/govuk" as *;
 
 @include govuk-exports("naturescot/component/cookie-bar") {
   .naturescot-cookie-bar {

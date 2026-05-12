@@ -1,8 +1,4 @@
-@import "govuk-frontend/dist/govuk/settings/index";
-@import "govuk-frontend/dist/govuk/tools/index";
-@import "govuk-frontend/dist/govuk/helpers/index";
-
-@import "govuk-frontend/dist/govuk/helpers/typography";
+@use "govuk-frontend/dist/govuk" as *;
 
 $naturescot-logo: "naturescot-logo.png" !default;
 
@@ -20,17 +16,17 @@ $naturescot-logo: "naturescot-logo.png" !default;
   $naturescot-footer-crest-image-width-original: 512px;
   $naturescot-footer-crest-image-height-original: 430px;
   // Divide by 3 (rather than halve) the new image so that it fits the regular 1x size but maintains aspect ratio.
-  $naturescot-footer-crest-image-width: ($naturescot-footer-crest-image-width-original / 3);
-  $naturescot-footer-crest-image-height: ($naturescot-footer-crest-image-height-original / 3);
+  $naturescot-footer-crest-image-width: calc($naturescot-footer-crest-image-width-original / 3);
+  $naturescot-footer-crest-image-height: calc($naturescot-footer-crest-image-height-original / 3);
 
   .naturescot-footer {
-    @include govuk-font($size: 16);
-    @include govuk-responsive-padding(7, "top");
-    @include govuk-responsive-padding(5, "bottom");
-
     border-top: 1px solid $naturescot-footer-border-top;
     color: $naturescot-footer-text;
     background: $naturescot-footer-background;
+
+    @include govuk-font($size: 16);
+    @include govuk-responsive-padding(7, "top");
+    @include govuk-responsive-padding(5, "bottom");
   }
 
   .naturescot-footer__link {
@@ -57,9 +53,9 @@ $naturescot-logo: "naturescot-logo.png" !default;
 
   .naturescot-footer__section-break {
     margin: 0; // Reset `<hr>` default margins
-    @include govuk-responsive-margin(8, "bottom");
     border: 0; // Reset `<hr>` default borders
     border-bottom: 1px solid $naturescot-footer-border;
+    @include govuk-responsive-margin(8, "bottom");
   }
 
   .naturescot-footer__meta {
@@ -103,10 +99,10 @@ $naturescot-logo: "naturescot-logo.png" !default;
   .naturescot-footer__licence-logo {
     display: inline-block;
     margin-right: govuk-spacing(2);
+    vertical-align: top;
     @include govuk-media-query($until: desktop) {
       margin-bottom: govuk-spacing(3);
     }
-    vertical-align: top;
   }
 
   .naturescot-footer__licence-description {
@@ -143,12 +139,12 @@ $naturescot-logo: "naturescot-logo.png" !default;
   }
 
   .naturescot-footer__heading {
-    @include govuk-responsive-margin(7, "bottom");
     padding-bottom: govuk-spacing(4);
+    border-bottom: 1px solid $naturescot-footer-border;
+    @include govuk-responsive-margin(7, "bottom");
     @include govuk-media-query($until: tablet) {
       padding-bottom: govuk-spacing(2);
     }
-    border-bottom: 1px solid $naturescot-footer-border;
   }
 
   .naturescot-footer__navigation {

@@ -1,8 +1,4 @@
-@import "govuk-frontend/dist/govuk/settings/index";
-@import "govuk-frontend/dist/govuk/tools/index";
-@import "govuk-frontend/dist/govuk/helpers/index";
-
-@import "govuk-frontend/dist/govuk/helpers/typography";
+@use "govuk-frontend/dist/govuk" as *;
 
 @include govuk-exports("naturescot/component/header") {
   $naturescot-header-background: #5e8bbf;
@@ -15,11 +11,11 @@
   $naturescot-header-nav-item-border-color: #2e3133;
 
   .naturescot-header {
-    @include govuk-font($size: 16);
-
     border-bottom: govuk-spacing(2) solid govuk-colour("white");
     color: $naturescot-header-text;
     background: $naturescot-header-background;
+
+    @include govuk-font($size: 16);
   }
 
   .naturescot-header__container--full-width {
@@ -60,9 +56,9 @@
   }
 
   .naturescot-header__product-name {
-    @include govuk-font($size: 24, $line-height: 1);
     display: inline-table;
     padding-right: govuk-spacing(2);
+    @include govuk-font($size: 24, $line-height: 1);
   }
 
   .naturescot-header__link {
@@ -84,14 +80,11 @@
     &:link:focus {
       @include govuk-text-colour;
     }
-
   }
 
   .naturescot-header__link--homepage {
     // Font size needs to be set on the link so that the box sizing is correct
     // in Firefox
-    @include govuk-font($size: false, $weight: bold);
-
     display: inline-block;
     font-size: 30px; // We don't have a mixin that produces 30px font size
     line-height: 1;
@@ -115,6 +108,8 @@
       margin-bottom: 0;
       border-bottom: 0;
     }
+
+    @include govuk-font($size: false, $weight: bold);
   }
 
   .naturescot-header__link--service-name {
@@ -149,7 +144,6 @@
   }
 
   .naturescot-header__menu-button {
-    @include govuk-font($size: 16);
     display: none;
     position: absolute;
     top: govuk-spacing(4);
@@ -177,6 +171,8 @@
     @include govuk-media-query($from: tablet) {
       top: govuk-spacing(3);
     }
+
+    @include govuk-font($size: 16);
   }
 
   .naturescot-header__menu-button--open {
@@ -237,8 +233,8 @@
     }
 
     a {
-      @include govuk-font($size: 16, $weight: bold);
       white-space: nowrap;
+      @include govuk-font($size: 16, $weight: bold);
     }
   }
 
