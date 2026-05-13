@@ -5,7 +5,7 @@ $naturescot-assets: $path-prefix + '/naturescot-frontend/assets/' !default;
 
 @forward 'govuk-frontend/dist/govuk' with (
   $govuk-font-family: $font-family,
-  $govuk-assets-path: $naturescot-assets,
+  $govuk-assets-path: $govuk-assets,
   $govuk-new-organisation-colours: true
 );
 
