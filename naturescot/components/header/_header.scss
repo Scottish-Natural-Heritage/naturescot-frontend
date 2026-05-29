@@ -78,7 +78,7 @@
     }
 
     &:link:focus {
-      @include govuk-text-colour;
+      color: govuk-functional-colour(text);
     }
   }
 

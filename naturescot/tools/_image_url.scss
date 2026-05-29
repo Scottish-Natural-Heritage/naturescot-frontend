@@ -1,0 +1,25 @@
+@use "sass:meta";
+
+@use "../settings/all" as *;
+
+/// Image URL
+///
+/// If a custom image-url handler is defined ($naturescot-image-url-function) then
+/// it will be called, otherwise a url will be returned with the filename
+/// appended to the image path.
+///
+/// @param {String} Filename for the image to load
+/// @return {String} URL for the filename, wrapped in `url()`
+/// @access public
+
+@function naturescot-image-url($filename) {
+  // prettier-ignore
+  $custom-function: meta.variable-exists("naturescot-image-url-function")
+    and $naturescot-image-url-function;
+
+  @if $custom-function {
+    @return meta.call($custom-function, $filename);
+  } @else {
+    @return url($naturescot-images-path + $filename);
+  }
+}
