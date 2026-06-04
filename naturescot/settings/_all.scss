@@ -1,0 +1,6 @@
+$font-family: 'Roboto' !default;
+$path-prefix: '' !default;
+$govuk-assets: $path-prefix + '/govuk-frontend/dist/govuk/' !default;
+$naturescot-assets: $path-prefix + '/naturescot-frontend/assets/' !default;
+$naturescot-images-path: $naturescot-assets + 'images/' !default;
+$naturescot-fonts-path: $naturescot-assets + 'fonts/' !default;

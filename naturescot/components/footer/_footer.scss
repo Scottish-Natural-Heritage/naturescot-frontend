@@ -1,14 +1,15 @@
 @use "govuk-frontend/dist/govuk" as *;
+@use "../../tools/image_url" as *;
 
 $naturescot-logo: "naturescot-logo.png" !default;
 
 @include govuk-exports("naturescot/component/footer") {
-  $naturescot-footer-background: $govuk-canvas-background-colour;
+  $naturescot-footer-background: govuk-functional-colour(template-background);
   $naturescot-footer-border: $govuk-border-colour;
   // This variable can be removed entirely once the legacy palette goes away,
   // as it'll just be the same as $naturescot-footer-border.
   $naturescot-footer-border-top: $govuk-border-colour;
-  $naturescot-footer-text: $govuk-text-colour;
+  $naturescot-footer-text: govuk-functional-colour(text);
   $naturescot-footer-link: $naturescot-footer-text;
 
   // Was originally based on the govuk-crest-2x.png image dimensions, but the new
@@ -47,7 +48,7 @@ $naturescot-logo: "naturescot-logo.png" !default;
     }
 
     &:link:focus {
-      @include govuk-text-colour;
+      color: govuk-functional-colour(text)
     }
   }
 
@@ -113,7 +114,7 @@ $naturescot-logo: "naturescot-logo.png" !default;
     display: inline-block;
     min-width: $naturescot-footer-crest-image-width;
     padding-top: ($naturescot-footer-crest-image-height + govuk-spacing(2));
-    background-image: govuk-image-url($naturescot-logo);
+    background-image: naturescot-image-url($naturescot-logo);
     background-repeat: no-repeat;
     background-position: 50% 0%;
     background-size: $naturescot-footer-crest-image-width $naturescot-footer-crest-image-height;
