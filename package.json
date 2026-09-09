@@ -14,5 +14,8 @@
   },
   "prettier": {
     "printWidth": 120
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true
   }
 }
